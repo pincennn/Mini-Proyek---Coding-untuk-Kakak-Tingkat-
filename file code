@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    double rupiah; 
+	double kursDollar = 16.215; 
+    char pilihan;
+    
+    double konversiRupiahKeDollar(double rupiah, double kurs) {
+    return rupiah / kurs;
+}
+    do {
+        printf("Masukkan jumlah Rupiah: Rp ");
+        scanf("%lf", &rupiah);
+
+        if (rupiah <= 0) {
+            printf("Jumlah Rupiah harus lebih dari 0!\n");
+        } else {
+            double hasil = konversiRupiahKeDollar(rupiah, kursDollar);
+            printf("Rp %.3lf setara dengan USD %.2lf\n", rupiah, hasil);
+        }
+
+        printf("Apakah kamu ingin mengonversi lagi? (y/n): ");
+        scanf("%c", &pilihan); 
+    } while (pilihan == 'y' || pilihan == 'Y');  
+
+    printf("Terima kasih telah menggunakan alat hitung konversi mata uang!\n");
+    return 0;
+}
